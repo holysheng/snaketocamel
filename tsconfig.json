@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "Node16",
+    "target": "ES2022",
+    "lib": [
+      "ES2022"
+    ],
+    "sourceMap": true,
+    "rootDir": "src",
+    "strict": true, /* 启用所有严格类型检查选项 */
+    /* 额外检查 */
+    // "noImplicitReturns": true, /* 当函数中不是所有代码路径都返回值时报错 */
+    // "noFallthroughCasesInSwitch": true, /* 在switch语句中，为贯穿案例报告错误 */
+    // "noUnusedParameters": true,  /* 报告未使用参数的错误 */
+  }
+}
