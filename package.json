@@ -1,0 +1,57 @@
+{
+  "name": "snaketocamel",
+  "displayName": "SnakeToCamel/蛇形、驼峰命名切换",
+  "description": "光标下的单词（无须选中），在蛇形命名snake与驼峰命名camel间互相切换",
+  "version": "0.1.0",
+  "publisher": "holysheng",
+  "icon": "images/logo.png",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/holysheng/snaketocamel"
+  },
+  "engines": {
+    "vscode": "^1.79.2"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:snaketocamel.toggleCase"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "snaketocamel.toggleCase",
+        "title": "切换命名风格（蛇形/驼峰）"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "snaketocamel.toggleCase",
+        "key": "ctrl+shift+u",
+        "mac": "cmd+shift+u",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "esbuild ./src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node && vsce package",
+    "publish": "esbuild ./src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node && vsce publish",
+    "dev": "esbuild ./src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --watch",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.79.0",
+    "@vscode/vsce": "^2.19.0",
+    "esbuild": "^0.18.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.1",
+    "typescript": "^4.9.5"
+  }
+}
